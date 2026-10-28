@@ -1,4 +1,3 @@
-
 name: Refresh meals and deploy Pages
 
 on:
@@ -37,6 +36,9 @@ jobs:
 
       - name: Refresh public meal data
         run: python scripts/collect.py
+
+      - name: Generate Kakao-readable dinner pages
+        run: python scripts/publish_kakao.py
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
