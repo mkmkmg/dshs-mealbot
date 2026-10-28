@@ -1,0 +1,9 @@
+{
+  "updatedAt": null,
+  "source": "https://orya.ng/api/meals",
+  "timeZone": "Asia/Seoul",
+  "count": 0,
+  "days": [],
+  "partial": false,
+  "notes": ["Initial placeholder. Data appears after the first successful GitHub Actions refresh."]
+}

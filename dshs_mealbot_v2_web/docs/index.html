@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111c2c">
+  <title>대신고 석식봇</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <div class="eyebrow">D A E S H I N · D I N N E R</div>
+      <h1>오늘 석식 <span>뭐야?</span></h1>
+      <p>대전대신고 석식 조회 · 공개된 오량인 급식 데이터를 기반으로 표시합니다.</p>
+      <div id="sync" class="status" aria-live="polite">데이터 불러오는 중…</div>
+    </header>
+    <section class="card" aria-label="석식 조회">
+      <div class="head-row">
+        <div>
+          <div class="small-label">날짜별 급식</div>
+          <h2 id="day-title">날짜 선택</h2>
+        </div>
+        <input id="meal-date" type="date" aria-label="조회 날짜 선택">
+      </div>
+      <div class="actions">
+        <button type="button" data-offset="0">오늘</button>
+        <button type="button" data-offset="1">내일</button>
+        <button type="button" data-offset="2">모레</button>
+      </div>
+      <div id="meal-panel" class="meal-panel" aria-live="polite">데이터를 가져오고 있어요.</div>
+      <p class="note">※ 석식 정보가 없다는 것은 <strong>석식 미운영을 뜻하지 않습니다.</strong> 아직 등록되지 않았을 수도 있어요.</p>
+    </section>
+    <section class="card chat-card" aria-label="명령어 테스트">
+      <div class="small-label">COMMAND PREVIEW</div>
+      <h2>명령어 미리보기</h2>
+      <p class="subtle">나중에 챗봇에 붙일 명령 형식을 미리 체험할 수 있어요.</p>
+      <div class="command-row">
+        <input id="command" autocomplete="off" placeholder="!석식 또는 !11월2일석식" aria-label="챗봇 명령어">
+        <button id="send" type="button" class="primary">조회</button>
+      </div>
+      <div class="examples"><button type="button" data-command="!석식">!석식</button><button type="button" data-command="!내일석식">!내일석식</button><button type="button" data-command="!이번주석식">!이번주석식</button></div>
+      <pre id="chat-result" class="chat-result" aria-live="polite">명령어를 입력하면 여기에 결과가 나와요.</pre>
+    </section>
+    <footer>
+      <span>데이터 제공: <a href="https://orya.ng/" target="_blank" rel="noopener noreferrer">오량인</a></span>
+      <span>비공식 학생 프로젝트 · 오량인/학교 공식 서비스가 아님</span>
+    </footer>
+  </main>
+</body>
+</html>
